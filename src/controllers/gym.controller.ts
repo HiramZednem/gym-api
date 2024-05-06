@@ -6,7 +6,7 @@ export const gymController = {
     getAll: async (req: Request, res: Response) => {
         try {
             const gyms = await gymService.getAll();
-            return res.status(201).json(gyms);
+            return res.status(200).json(gyms);
         } catch (e) {
             res.status(500).json({ error: (e as Error).message });
         }
@@ -22,7 +22,7 @@ export const gymController = {
     create: async (req: Request, res: Response) => {
         try {
             const gym = await gymService.create(req.body);
-            return res.status(201).json(gym);
+            return res.status(200).json(gym);
         } catch (e) {
             res.status(500).json({ error: (e as Error).message });
         }
@@ -30,7 +30,7 @@ export const gymController = {
     update: async (req: Request, res: Response) => {
         try {
             const gym = await gymService.update(parseInt(req.params.id), req.body);
-            return res.status(201).json(gym);
+            return res.status(200).json(gym);
         } catch (e) {
             res.status(500).json({ error: (e as Error).message });
         }
@@ -38,7 +38,7 @@ export const gymController = {
     delete: async (req: Request, res: Response) => {
         try {
             const gym = await gymService.delete(parseInt(req.params.id));
-            return res.status(201).json(gym);
+            return res.status(200).json(gym);
         } catch (e) {
             res.status(500).json({ error: (e as Error).message });
         }

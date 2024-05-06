@@ -4,10 +4,9 @@ import { gymController } from '../controllers';
 const router = Router();
 
 router.get('/', gymController.getAll);
-// router.get('/:id', userController.getUser);
-// router.get('/', userController.getAllUser);
-// router.post('/login', userController.login);
-// router.patch('/:id', userController.updateUser);
-
+router.get('/:id', gymController.getById);
+router.post('/', gymController.create);
+router.put('/:id', gymController.update);
+router.delete('/:id', gymController.delete);
 
 export default router;

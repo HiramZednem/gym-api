@@ -7,8 +7,8 @@ export const gymController = {
         try {
             const gyms = await gymService.getAll();
             return res.status(201).json(gyms);
-        } catch (error) {
-            res.status(500).json({ error: 'Failed to create new user' });
+        } catch (e) {
+            res.status(500).json({ error: (e as Error).message });
         }
     },
 

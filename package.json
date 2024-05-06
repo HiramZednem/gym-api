@@ -7,6 +7,8 @@
     "dev": "nodemon ./src/index.ts",
     "start": "node ./src/index.ts",
     "build": "tsc",
+    "deploy": "npm run build && vercel --prod",
+    "postinstall": "prisma generate",
     "prisma:update": "prisma db pull && prisma generate"
   },
   "keywords": [],
